@@ -1,0 +1,62 @@
+body {
+    display: flex;
+    flex-direction: column;
+    border: solid purple;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    border: solid green;
+    letter-spacing: 0.7vw;
+    word-spacing: 5vw;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+}
+
+main {
+    border: 1px solid blue;
+    width: 100%;
+}
+
+
+.container {
+    /* border: 1px solid salmon; */
+    display: flex;
+    height: 42vh;
+    overflow: auto;
+    border: 1px solid rgba(58, 27, 99, 0.274);
+}
+
+.section {
+    display: flex;
+    /* border: solid red; */
+    flex-direction: column;
+    width: 50%;
+    height: 42vh;
+    overflow: auto;
+}
+
+.hidden-div {
+    border: 1px solid rgba(58, 27, 99, 0.274);
+    background-color: rgba(237, 237, 250, 0.459);
+    transition: background-color 400ms linear 40ms;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.hidden-div:hover {
+    background-color: rgba(177, 177, 236, 0.233);
+}
+/* #hidden-firstnamenika, #hidden-kweeuhree {
+    display: none;
+} */
+
