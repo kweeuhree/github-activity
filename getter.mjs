@@ -15,13 +15,19 @@ const getRepos = async (reposUrl) => {
 }
 
 const addRepoItem = (obj) => {
-    const thisSection = document.getElementById(`section-${obj.owner.login}`);
-    // console.log(obj.owner.login, ' login');
-    const template = document.getElementById(`template-${obj.owner.login}`);
+    let thisSection;
+    let template; 
+    console.log(obj);
+    if(obj.owner.login === 'kweeuhree' || obj.owner.login === 'firstnamenika') {
+        thisSection = document.getElementById(`section-${obj.owner.login}`);
+        template = document.getElementById(`template-${obj.owner.login}`);
+    } else {
+        thisSection = document.querySelector(`.output-container`);
+        template = document.getElementById(`template-repos`);
+    }
+    console.log(template);
     const repo = template.content.cloneNode(true);
-    
     repo.querySelector('li a').innerHTML = obj.name;
-
     repo.querySelector('li a').setAttribute('href', obj.html_url);
     // test if theres time------------------------------------------
     //const htmlUrl = obj.deployments_url;

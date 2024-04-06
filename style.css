@@ -1,13 +1,13 @@
 body {
     display: flex;
     flex-direction: column;
-    border: solid purple;
+    /* border: solid purple; */
     justify-content: center;
     align-items: center;
 }
 
 header {
-    border: solid green;
+    /* border: solid green; */
     letter-spacing: 0.7vw;
     word-spacing: 5vw;
     text-transform: uppercase;
@@ -16,7 +16,7 @@ header {
 }
 
 main {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     width: 100%;
 }
 
@@ -59,4 +59,64 @@ a {
 /* #hidden-firstnamenika, #hidden-kweeuhree {
     display: none;
 } */
+#top-container {
+    /* border: solid seagreen; */
+    flex-direction: column;
+    align-items:center ;
+}
 
+.top-title {
+    letter-spacing: 0.7vw;
+    word-spacing: 1vw;
+}
+
+.input-container {
+    border: 1px solid rgba(170, 146, 146, 0.425);
+    border-radius: 1vw;
+    padding: 0.4vh;
+}
+input {
+    margin: 0.2vh;
+    outline: none;
+}
+.button-container {
+    /* border: solid purple; */
+    border-radius: 1vw;
+    background-color: rgba(86, 86, 160, 0.712);
+}
+
+button {
+    border:  none;
+    width: 100%;
+    letter-spacing: 0.6vw;
+    font-weight: 600;
+    border-radius: 1vw;
+    background-color: rgba(146, 146, 185, 0.233);
+    color: aliceblue;
+}
+
+button:hover, .button-container:hover {
+    background-color: rgba(23, 23, 182, 0.432);
+}
+
+.output-container {
+    border: solid green;
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.user-container {
+    width: 50%;
+    border: solid seagreen;
+}
+.user-ul {
+    border: 1px solid red;
+    width: 25%;
+}
+
+.user-ul > li {
+    border: solid blue;
+    text-wrap: nowrap;
+    margin: 0;
+}

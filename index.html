@@ -17,7 +17,51 @@
     <!-- Main -->
     <main>
         <!-- Top Container -->
-        <div class="container" id="top-container"></div>
+        <div class="container" id="top-container">
+            <div class="top-title">
+                <h3>find a user</h3>
+            </div>
+
+            <!-- input container  -->
+            <div class="input-container">
+
+                <div class="form-container">
+            <!-- form starts here -->
+            <form id="username-form">
+
+                    <label for="user-name">User name:</label>
+                    <input type="text" placeholder="enter a valid user name" id="user-name">
+                </div>
+                   
+                <div class="button-container">
+                    <button>click</button>
+                </div>
+
+            </form>
+            <!-- form ends here -->
+
+            </div>
+
+            <!-- output container -->
+            <div class="output-container">
+
+                <div class="user-container">
+                    <template id="template-repos">
+                        <ul class="user-ul">
+                            <li><a></a></li>
+                        </ul>
+                    </template>
+                </div>
+                
+                <div class="user-container">
+                    <div class="num-of-public-repos"></div>
+                    <div class="blog"></div>
+                    <div class="created-at"></div>
+                    <div class="existed-for"></div>
+                </div>
+
+            </div>
+        </div>
 
         <!-- Bottom container -->
         <div class="container" id="bottom-container">
@@ -27,7 +71,14 @@
                 <div class="title">
                     <h3>kweeuhree</h3>
                 </div>
-                <!-- template -->
+                <!-- template for user information -->
+                <template id="user-info-kweeuhree">
+                    <div class="num-of-public-repos"></div>
+                    <div class="blog"></div>
+                    <div class="created-at"></div>
+                    <div class="existed-for"></div>
+                </template>
+                <!-- template with repos-->
                 <template id="template-kweeuhree">
                     <div class="hidden-div" id="hidden-kweeuhree">
                         <ul>
