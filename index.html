@@ -29,10 +29,11 @@
             <!-- form starts here -->
             <form id="username-form">
 
+                <!-- input -->
                     <label for="user-name">User name:</label>
                     <input type="text" placeholder="enter a valid user name" id="user-name">
                 </div>
-                   
+                <!-- button -->
                 <div class="button-container">
                     <button>click</button>
                 </div>
@@ -45,18 +46,18 @@
             <!-- output container -->
             <div class="output-container">
 
-                <div class="user-container">
-                    <template id="template-repos">
-                        <ul class="user-ul">
-                            <li><a></a></li>
-                        </ul>
-                    </template>
+                <!-- user repositories container -->
+                <div class="repo-container user-container">
+                    <div id="template-repos">
+                        <div class="template-ul"></div>
+                    </div>
                 </div>
-                
-                <div class="user-container">
+
+                <!-- user information container -->
+                <div class="user-info-container">
                     <div class="num-of-public-repos"></div>
                     <div class="blog"></div>
-                    <div class="created-at"></div>
+                    <div class="updated-at"></div>
                     <div class="existed-for"></div>
                 </div>
 
@@ -72,20 +73,18 @@
                     <h3>kweeuhree</h3>
                 </div>
                 <!-- template for user information -->
-                <template id="user-info-kweeuhree">
+                <div id="user-info-kweeuhree">
                     <div class="num-of-public-repos"></div>
                     <div class="blog"></div>
-                    <div class="created-at"></div>
+                    <div class="updated-at"></div>
                     <div class="existed-for"></div>
-                </template>
+                </div>
                 <!-- template with repos-->
-                <template id="template-kweeuhree">
+                <div id="template-kweeuhree">
                     <div class="hidden-div" id="hidden-kweeuhree">
-                        <ul>
-                            <li><a></a></li>
-                        </ul>
+                        <div class="template-ul"></div>
                     </div>
-                </template>
+                </div>
             </div>
 
             <!-- firstnamenika -->
@@ -93,14 +92,19 @@
                 <div class="title">
                     <h3>firstnamenika</h3>
                 </div>
-                <!-- template -->
-                <template id="template-firstnamenika">
+                <!-- template for user information -->
+                <div id="user-info-firstnamenika">
+                    <div class="num-of-public-repos"></div>
+                    <div class="blog"></div>
+                    <div class="updated-at"></div>
+                    <div class="existed-for"></div>
+                </div>
+                <!-- template with repos -->
+                <div id="template-firstnamenika">
                     <div class="hidden-div" id="hidden-firstnamenika">
-                        <ul>
-                            <li><a></a></li>
-                        </ul>
+                        <div class="template-ul"></div>
                     </div>
-                </template>
+                </div>
             </div>
         </div>
 

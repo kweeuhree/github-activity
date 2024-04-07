@@ -1,24 +1,52 @@
-import { fetchUser } from './getter.mjs';
+import { fetchUser } from './getter.mjs'; // import fetchUser from getter module
 
-const kweeuhreeObj = fetchUser('kweeuhree');
+const kweeuhreeObj = fetchUser('kweeuhree'); //get kweeuhree object
 // console.log(kweeuhreeObj);
-const firstnamenikaObj = fetchUser('firstnamenika');
+const firstnamenikaObj = fetchUser('firstnamenika'); // get firstnamenika object
+// console.log(firstnamenikaObj);
 
-function showRepos(title) {
-    // console.log(title, ' inside show repos');
-    //toggle class of an element with id of title
-    const thisElement = document.getElementById(`hidden-${title}`);
-    console.log(thisElement, ' thisElelment inside showRepos'); 
-    // const thisClass = thisElement.classList[0];
-    let computedStyle = window.getComputedStyle(thisElement);
-
-    if(computedStyle.display === 'none') {
-        thisElement.style.display = 'flex';
-    } else {
-        thisElement.style.display = 'none';
-    }
-
+// listen to form submit
+function addEventListenerFindUser() {
+    const myForm = document.forms['username-form']; //get the form
+    myForm.addEventListener('submit', function (event) {
+        handleUserInput(event); //pass event to handle user input
+        myForm.reset(); //reset form input value
+    });
+    
 }
+
+// Handle user input
+const handleUserInput = async (e) => {
+    e.preventDefault(); // prevent default form behavior
+    let input = document.querySelector('#user-name').value; //get user input
+    input = input.trim(); //trim whitespace
+
+    try {
+        const user = await fetchUser(input); // get user object
+        console.log(' i approved the input')
+        console.log(user, ' user inside handleUserInput')
+    } catch (error) {
+        console.log('failed to handle user input, input: ', input, ' ', error);
+    }
+}
+//--------------------------------------------------------------------
+//function showRepos, is supposed to toggle hidden div to display flex;
+// doesnt work, needs testing
+// function showRepos(title) {
+//     // console.log(title, ' inside show repos');
+//     //toggle class of an element with id of title
+//     const thisElement = document.getElementById(`hidden-${title}`);
+//     console.log(thisElement, ' thisElelment inside showRepos'); 
+//     // const thisClass = thisElement.classList[0];
+//     let computedStyle = window.getComputedStyle(thisElement);
+
+//     if(computedStyle.display === 'none') {
+//         thisElement.style.display = 'flex';
+//     } else {
+//         thisElement.style.display = 'none';
+//     }
+
+// }
 
 function addEventListenerTitle() {
     const titleList = document.getElementsByClassName('title');
@@ -31,27 +59,8 @@ function addEventListenerTitle() {
         });
     }
 }
+//----------------------------------------------------------------------
 
-function addEventListenerFindUser() {
-    const myForm = document.forms['username-form'];
-    myForm.addEventListener('submit', function (event) {
-        handleUserInput(event);
-    });
-    myForm.reset();
-}
-
-function handleUserInput(e) {
-    e.preventDefault();
-    let input = document.querySelector('#user-name').value;
-    input = input.trim();
-
-    try {
-        const user = fetchUser(input); 
-        console.log(' i approved the input')
-    } catch (error) {
-        console.log('failed to hadle user input, input: ', input), ' ', error;
-    }
-}
-
+// add event listeners
 addEventListenerTitle();
 addEventListenerFindUser();

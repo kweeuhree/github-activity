@@ -5,7 +5,7 @@ body {
     justify-content: center;
     align-items: center;
 }
-
+/* Main header */
 header {
     /* border: solid green; */
     letter-spacing: 0.7vw;
@@ -15,18 +15,21 @@ header {
     text-align: center;
 }
 
+/* Main */
+
 main {
     /* border: 1px solid blue; */
     width: 100%;
 }
 
-
+/* general container style */
 .container {
     /* border: 1px solid salmon; */
     display: flex;
-    height: 42vh;
     overflow: auto;
+    height: 60vh;
     border: 1px solid rgba(58, 27, 99, 0.274);
+    margin-top: 1em;
 }
 
 .section {
@@ -34,10 +37,63 @@ main {
     /* border: solid red; */
     flex-direction: column;
     width: 50%;
-    height: 42vh;
+    height: 50vh;
     overflow: auto;
 }
 
+/* top container style */
+#top-container {
+    /* border: solid seagreen; */
+    flex-direction: column;
+    align-items:center ;
+}
+
+.top-title {
+    letter-spacing: 0.7vw;
+    word-spacing: 1vw;
+}
+
+.input-container {
+    border: 1px solid rgba(170, 146, 146, 0.425);
+    border-radius: 1vw;
+    padding: 0.4vh;
+    border: solid yellow;
+}
+input {
+    margin: 0.2vh;
+    outline: none;
+}
+
+.output-container {
+    border: solid purple;
+    width: 98%;
+    height: 50vh;
+    display: flex;
+}
+
+.user-container {
+    width: 50%;
+    border: solid seagreen;
+    height: 100%;
+    overflow: auto;
+}
+
+.user-info-container {
+    width: 50%;
+    border: solid goldenrod;
+}
+.user-ul {
+    border: 1px solid red;
+    width: 25%;
+}
+
+.user-ul > li {
+    border: solid blue;
+    text-wrap: nowrap;
+    margin: 0;
+}
+
+/* firstnamenika and kweeuhree style */
 .hidden-div {
     border: 1px solid rgba(58, 27, 99, 0.274);
     background-color: rgba(237, 237, 250, 0.459);
@@ -56,29 +112,8 @@ a {
 .hidden-div:hover {
     background-color: rgba(177, 177, 236, 0.233);
 }
-/* #hidden-firstnamenika, #hidden-kweeuhree {
-    display: none;
-} */
-#top-container {
-    /* border: solid seagreen; */
-    flex-direction: column;
-    align-items:center ;
-}
 
-.top-title {
-    letter-spacing: 0.7vw;
-    word-spacing: 1vw;
-}
-
-.input-container {
-    border: 1px solid rgba(170, 146, 146, 0.425);
-    border-radius: 1vw;
-    padding: 0.4vh;
-}
-input {
-    margin: 0.2vh;
-    outline: none;
-}
+/* click button */
 .button-container {
     /* border: solid purple; */
     border-radius: 1vw;
@@ -99,24 +134,6 @@ button:hover, .button-container:hover {
     background-color: rgba(23, 23, 182, 0.432);
 }
 
-.output-container {
-    border: solid green;
-    width: 100%;
-    flex-wrap: wrap;
-    display: flex;
-}
-
-.user-container {
-    width: 50%;
-    border: solid seagreen;
-}
-.user-ul {
-    border: 1px solid red;
-    width: 25%;
-}
-
-.user-ul > li {
-    border: solid blue;
-    text-wrap: nowrap;
-    margin: 0;
-}
+/* #hidden-firstnamenika, #hidden-kweeuhree {
+    display: none;
+} */
