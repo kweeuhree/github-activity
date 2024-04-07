@@ -80,7 +80,7 @@ const getRepos = async (reposUrl) => {
 
 const noRepos = () => {
     const repocontainer = document.querySelector('.repo-container');
-    repocontainer.innerHTML = 'No repositories yet!';
+    repocontainer.innerHTML = 'No public repositories yet!';
 }
 //---------------------test-----------------------------------------
 const displayUserInfo = (userName, numOfPublicRepos, blog, updatedAt, createdAt) => {
@@ -95,19 +95,19 @@ const displayUserInfo = (userName, numOfPublicRepos, blog, updatedAt, createdAt)
 
     const days = daysSinceRegister(createdAt);
     const toDisplayDays = thisSection.querySelector('.existed-for');
-    toDisplayDays.innerHTML = `Days since register: ${days}`;
+    toDisplayDays.innerHTML = days;
 
     const toDisplayNumRepos = thisSection.querySelector(".num-of-public-repos")
-    toDisplayNumRepos.innerHTML = `Public repositories: ${numOfPublicRepos}`;
+    toDisplayNumRepos.innerHTML = numOfPublicRepos;
 
     if(blog) {
         const toDisplayBlog = thisSection.querySelector('.blog');
-        toDisplayBlog.innerHTML = `Blog: ${blog}`;
+        toDisplayBlog.innerHTML = blog;
         console.log(blog, ' blog inside if statement inside displayUserInfo');
     }
 
     const toDisplayUpdated = thisSection.querySelector('.updated-at');
-    toDisplayUpdated.innerHTML = `Last updated: ${updatedAt}`;
+    toDisplayUpdated.innerHTML = updatedAt;
     console.log(updatedAt, ' updated at')
 
 }
