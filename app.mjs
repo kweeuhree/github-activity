@@ -12,8 +12,18 @@ function addEventListenerFindUser() {
     myForm.addEventListener('submit', function (event) {
         handleUserInput(event); //pass event to handle user input
         myForm.reset(); //reset form input value
+        resetValues();
     });
     
+}
+
+const resetValues = () => {
+    const toResetArray = document.getElementsByClassName('reset-value');
+    const userRepos = document.querySelector('.template-ul');
+    userRepos.innerHTML = '';
+    for(let value of toResetArray) {
+        value.innerHTML = '';
+    }
 }
 
 // Handle user input

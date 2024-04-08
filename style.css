@@ -157,6 +157,10 @@ button:hover, .button-container:hover {
     background-color: rgba(23, 23, 182, 0.432);
 }
 
+.gist-button {
+    width: 40%;
+}
+
 /* #hidden-firstnamenika, #hidden-kweeuhree {
     display: none;
 } */

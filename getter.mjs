@@ -82,7 +82,7 @@ const noRepos = () => {
     const repocontainer = document.querySelector('.repo-container');
     repocontainer.innerHTML = 'No public repositories yet!';
 }
-//---------------------test-----------------------------------------
+
 const displayUserInfo = (userName, numOfPublicRepos, blog, updatedAt, createdAt) => {
     let thisSection;
     console.log(userName);
