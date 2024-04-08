@@ -1,4 +1,5 @@
 import { fetchUser } from './getter.mjs'; // import fetchUser from getter module
+import { createGist } from './poster.mjs';
 
 const kweeuhreeObj = fetchUser('kweeuhree'); //get kweeuhree object
 // console.log(kweeuhreeObj);
@@ -64,3 +65,24 @@ function addEventListenerTitle() {
 // add event listeners
 addEventListenerTitle();
 addEventListenerFindUser();
+
+
+document.getElementById('gist-form').addEventListener('submit', async function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    const content = document.getElementById('gist-content').value.trim();
+
+    if (content === '') {
+        alert('Please enter some code');
+        return;
+    }
+
+    const gistUrl = await createGist(content);
+
+    if (gistUrl) {
+        document.getElementById('gist-url').innerHTML = `<a href="${gistUrl}" target="_blank">${gistUrl}</a>`;
+        console.log(gistUrl, 'gistUrl after creating');
+    } else {
+        alert('Failed to create Gist');
+    }
+});

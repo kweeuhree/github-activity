@@ -1,24 +1,32 @@
-// post to like repos?
+// import axios from 'axios';
 
-const poster = await axios.post(url, {
-    method: 'POST',
-    headers: 'some headers'
-});
- poster.then((data) => {
+export async function createGist(content) {
+    const apiUrl = 'https://api.github.com/gists';
 
- })
- .catch((error) =>
-    console.log(error)
-)
+    const gistData = {
+        description: 'My Gist',
+        public: true,
+        files: {
+            'snippet.txt': {
+                content: content
+            }
+        }
+    };
 
-//export async function favourite(imgId) {
-//     const isFavorite = await axios(`/favourites?image_id=${imgId}`);
+    try {
+        const response = await axios.post(apiUrl, gistData, {
+            headers: {
+                'Content-Type': 'application/javascript'
+            }
+        });
 
-//     if (isFavorite.data[0]) {
-//       await axios.delete(`/favourites/${isFavorite.data[0].id}`);
-//     } else {
-//       await axios.post("/favourites", {
-//         image_id: imgId,
-//       });
-//     }
-//   }
+        if (response.status === 201) {
+            return response.data.html_url;
+        } else {
+            return null;
+        }
+    } catch (error) {
+        console.error('Error creating Gist:', error);
+        return null;
+    }
+}
